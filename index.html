@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayceMenu</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div id="site-container">
+        <header>
+            <h1>PlayceMenu</h1>
+        </header>
+
+        <section id="menu">
+            <h2>Меню</h2>
+            <div id="category-filter">
+                <button class="filter" data-category="all">Все</button>
+                <button class="filter" data-category="Горячая лапша">Горячая лапша</button>
+                <button class="filter" data-category="Вафли и батончики">Вафли и батончики</button>
+                <button class="filter" data-category="Жвательная резинка">Жвательная резинка</button>
+                <button class="filter" data-category="Конфеты">Конфеты</button>
+                <button class="filter" data-category="Мармелад">Мармелад</button>
+                <button class="filter" data-category="Напитки">Напитки</button>
+                <button class="filter" data-category="Печенья">Печенья</button>
+                <button class="filter" data-category="Хлопья">Хлопья</button>
+                <button class="filter" data-category="Чипсы и Сухарики">Чипсы и Сухарики</button>
+                <button class="filter" data-category="Шоколадки">Шоколадки</button>
+            </div>
+
+            <div class="category" data-category="Горячая лапша">
+                <h3>Горячая лапша</h3>
+                <div class="menu-list">
+                    <div class="menu-item">
+                        <img src="img/Горячая лапша/cupnoodles_sweet_chili.png" alt="Горячая лапша">
+                        <h4>Горячая лапша(Острая)</h4>
+                        <p>Вкусная, острая лапша, быстрого приготовления</p>
+                        <span class="price">300 руб.</span>
+                        <button class="add-to-cart" data-price="300" data-name="Горячая лапша(Острая)">Добавить</button>
+                        <button class="remove-from-cart" data-price="300" data-name="Горячая лапша(Острая)">Убрать</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Горячая лапша/cupnoodles_teriyaki.png" alt="Паста">
+                        <h4>Горячая лапша</h4>
+                        <p>Лапша с говядиной, быстрого приготовления, с соусом терияки.</p>
+                        <span class="price">300 руб.</span>
+                        <button class="add-to-cart" data-price="300" data-name="Горячая лапша">Добавить</button>
+                        <button class="remove-from-cart" data-price="300" data-name="Горячая лапша">Убрать</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category" data-category="Вафли и батончики">
+                <h3>Вафли и батончики</h3>
+                <div class="menu-list">
+                    <div class="menu-item">
+                        <img src="img/Вафли и батончики/hanuta.png" alt="Hanuta">
+                        <h4>Hanuta</h4>
+                        <p>Вафельные батончики с кремом в шоколадной глазури</p>
+                        <span class="price">150 руб.</span>
+                        <button class="add-to-cart" data-price="150" data-name="Hanuta">Добавить</button>
+                        <button class="remove-from-cart" data-price="150" data-name="Hanuta">Убрать</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Вафли и батончики/kitkat_peanut_butter.png" alt="Kitkat c арахисовым маслом">
+                        <h4>Kitkat арахис</h4>
+                        <p>Kitkat c арахисовым маслом внутри </p>
+                        <span class="price">150 руб.</span>
+                        <button class="add-to-cart" data-price="150" data-name="Kitkat c арахисовым маслом">Добавить</button>
+                        <button class="remove-from-cart" data-price="150" data-name="Kitkat c арахисовым маслом">Убрать</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Вафли и батончики/kitkat_white_ch.png" alt="Kitkat белый шоколад">
+                        <h4>Kitkat белый шоколад</h4>
+                        <p>Вафельный батончик,покрытый белым шоколадом</p>
+                        <span class="price">150 руб.</span>
+                        <button class="add-to-cart" data-price="150" data-name="Kitkat белый шоколад">Добавить</button>
+                        <button class="remove-from-cart" data-price="150" data-name="Kitkat белый шоколад">Убрать</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Вафли и батончики/knoppers.png" alt="Kitkat белый шоколад">
+                        <h4>Knoppers</h4>
+                        <p>Хрустящие вафли с вкуснейшей шоколадной и молочно-сливочной начинкой</p>
+                        <span class="price">150 руб.</span>
+                        <button class="add-to-cart" data-price="150" data-name="Kitkat белый шоколад">Добавить</button>
+                        <button class="remove-from-cart" data-price="150" data-name="Kitkat белый шоколад">Убрать</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="category" data-category="Напитки">
+                <h3>Напитки</h3>
+                <div class="menu-list">
+                    <div class="menu-item">
+                        <img src="drink.jpg" alt="Напиток">
+                        <h4>Напиток</h4>
+                        <p>Освежающий напиток на выбор.</p>
+                        <span class="price">100 руб.</span>
+                        <button class="add-to-cart" data-price="100" data-name="Напиток">Добавить</button>
+                        <button class="remove-from-cart" data-price="100" data-name="Напиток">Убрать</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cart">
+                <h3>Корзина</h3>
+                <ul id="cart-list">
+                    <!-- Корзина заполняется динамически -->
+                </ul>
+                <strong>Общая стоимость:</strong> <span id="total-cost">0</span>
+                <button id="submit-order">Оформить заказ</button>
+            </div>
+        </section>
+
+        <!-- Модальное окно -->
+        <div id="order-modal" class="hidden">
+            <div class="modal-content">
+                <h2>Чек заказа</h2>
+                <div id="order-details">
+                    <!-- Детали заказа добавляются динамически -->
+                </div>
+                <strong>Общая стоимость:</strong> <span id="modal-total-cost">0</span> руб.
+                <h3>Скриншот заказа будет сохранен.<h3>
+                <div class="modal-buttons">
+                    <button id="confirm-order">Подтвердить</button>
+                    <button id="cancel-order">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <script src="script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+#site-container {
+    width: 90%;
+    max-width: 1200px;
+    background: rgb(0, 0, 0);
+    border-radius: 8px;
+    
+    padding: 20px;
+}
+/* Общие стили */
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 150%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+/* Для десктопов */
+@media (min-width: 769px) {
+    main {
+        display: flex;
+        justify-content: space-around;
+        
+    }
+
+    section {
+        width: 90%;
+        
+    }
+}
+
+
+#menu {
+    padding: 20px;
+    background-color: #000000;
+    margin: 20px;
+    border: 3px solid #ff7300;
+    border-radius: 10px;
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap; /* Чтобы товары переносились на следующую строку, если не помещаются */
+    gap: 20px; /* Расстояние между товарами */
+    justify-content: center; /* Центрируем товары */
+}
+
+.menu-item {
+    flex: 0 1 200px; /* Указываем ширину карточки (200px) */
+    background-color: rgb(0, 0, 0);
+    border: 2px solid #ff7300cb;
+    border-radius: 8px;
+    
+    text-align: center;
+    padding: 10px;
+}
+
+.menu-item img {
+    max-width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.menu-item h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.menu-item p {
+    font-size: 14px;
+    color: #b9b9b9;
+    margin-bottom: 10px;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffbb00e3;
+}
+
+.menu-item .add-to-cart {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #ff7300;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-item .add-to-cart:hover {
+    background-color: #ff3c00;
+}
+
+/* Общая стоимость */
+#total {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+button:hover {
+    background-color: #ff7300;
+}
+/* Категории меню */
+.category {
+    margin-bottom: 30px;
+    
+}
+
+.category h3 {
+    font-size: 20px;
+    margin-bottom: 50px;
+    color: #ff7300;
+    text-transform: uppercase;
+    border-bottom: 2px solid #dddddd3a;
+    padding-bottom: 5px;
+    
+}
+
+#category-filter {
+    margin: 20px 0;
+    text-align: center;
+    display: flex; /* Включаем Flexbox */
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку, если не хватает места */
+    gap: 10px; /* Расстояние между элементами */
+    justify-content: flex-start; /* Элементы выравниваются в начале строки (можно менять на center, space-between, etc.) */
+}
+
+#category-filter .filter {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #ff7300;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#category-filter .filter:hover {
+    background-color: #ff3300;
+}
+
+
+#cart {
+    position: fixed; /* Фиксируем корзину */
+    bottom: 20px; /* Отступ от нижнего края */
+    right: 20px; /* Отступ от левого края */
+    background-color: #ff7300; /* Синий фон корзины */
+    color: white; /* Белый текст */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 15px;
+    width: 200px; /* Ширина корзины */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+    z-index: 100; /* Поверх остального содержимого */
+    overflow-y: auto; /* Скролл, если контента много */
+    max-height: 60vh; /* Максимальная высота корзины */
+}
+
+#cart h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-list li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#total-cost {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button#submit-order {
+    display: block;
+    width: 100%;
+    background-color: #2d8d00; /* Зелёная кнопка */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+button#submit-order:hover {
+    background-color: #3dc000;
+}
+.add-to-cart, .remove-from-cart {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.remove-from-cart {
+    background-color: #dc3545;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.remove-from-cart:hover {
+    background-color: #a71d2a;
+}
+#cart {
+    opacity: 0;
+    transform: translateY(150px);
+    animation: slideIn 2.3s ease forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#cart {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none !important; /* Гарантированно скрывает элемент */
+}
+
+#order-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.829); /* Полупрозрачный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 25px;
+    text-align: center;
+    color: #ffa600;
+    border: 3px solid #ff7300;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#confirm-order {
+    background-color: #28a745;
+    color: white;
+}
+
+#cancel-order {
+    background-color: #dc3545;
+    color: white;
+}
