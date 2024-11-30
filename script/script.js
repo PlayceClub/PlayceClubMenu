@@ -68,6 +68,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const cartContainer = document.getElementById("cart-container");
+    const toggleCartButton = document.getElementById("toggle-cart");
+
+    // Переключение состояния корзины
+    toggleCartButton.addEventListener("click", () => {
+        cartContainer.classList.toggle("open");
+    });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     const cartList = document.getElementById("cart-list");
@@ -223,3 +232,4 @@ const link = document.createElement("a");
 link.href = imgData;
 link.target = "_blank"; // Открываем в новой вкладке
 link.click();
+
