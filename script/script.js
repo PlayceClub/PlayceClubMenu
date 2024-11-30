@@ -227,9 +227,71 @@ document.addEventListener("DOMContentLoaded", function () {
         orderModal.classList.add("hidden");
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    const removeFromCartButtons = document.querySelectorAll(".remove-from-cart");
+    const totalCostElement = document.getElementById("total-cost");
+
+    let cart = {}; // Хранение товаров
+    let totalCost = 0;
+
+    // Функция для обновления количества на экране
+    function updateItemCount(itemName) {
+        const countElement = document.querySelector(`.item-count[data-name="${itemName}"]`);
+        const item = cart[itemName];
+        if (item && item.quantity > 0) {
+            countElement.textContent = `x${item.quantity}`;
+        } else {
+            countElement.textContent = "x0";
+        }
+    }
+
+    // Обновление общей стоимости
+    function updateTotalCost() {
+        totalCostElement.textContent = `${totalCost} руб.`;
+    }
+
+    // Добавление товара
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const itemName = button.getAttribute("data-name");
+            const itemPrice = parseInt(button.getAttribute("data-price"));
+
+            if (cart[itemName]) {
+                cart[itemName].quantity++;
+            } else {
+                cart[itemName] = { price: itemPrice, quantity: 1 };
+            }
+
+            totalCost += itemPrice; // Увеличиваем общую стоимость
+            updateItemCount(itemName); // Обновляем количество на экране
+            updateTotalCost(); // Обновляем общую стоимость
+        });
+    });
+
+    // Удаление товара
+    removeFromCartButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const itemName = button.getAttribute("data-name");
+            const itemPrice = parseInt(button.getAttribute("data-price"));
+
+            if (cart[itemName] && cart[itemName].quantity > 0) {
+                cart[itemName].quantity--;
+                totalCost -= itemPrice;
+
+                if (cart[itemName].quantity === 0) {
+                    delete cart[itemName]; // Удаляем товар из корзины, если количество равно 0
+                }
+            }
+
+            updateItemCount(itemName); // Обновляем количество на экране
+            updateTotalCost(); // Обновляем общую стоимость
+        });
+    });
+});
+
 const imgData = canvas.toDataURL("image/png");
 const link = document.createElement("a");
 link.href = imgData;
 link.target = "_blank"; // Открываем в новой вкладке
 link.click();
-
