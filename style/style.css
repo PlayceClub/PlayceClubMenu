@@ -159,7 +159,7 @@ nav ul li a {
 
 button {
     padding: 10px 15px;
-    background-color: #28a745;
+    background-color: #ff7300cb;
     color: white;
     border: none;
     border-radius: 5px;
@@ -201,7 +201,7 @@ button:hover {
     padding: 10px 15px;
     border: none;
     background-color: #ff7300;
-    color: white;
+    color: #ffffff;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -211,41 +211,46 @@ button:hover {
 }
 
 
-#cart {
-    position: fixed; /* Фиксируем корзину */
-    bottom: 20px; /* Отступ от нижнего края */
-    right: 20px; /* Отступ от левого края */
-    background-color: #ff7300; /* Синий фон корзины */
-    color: white; /* Белый текст */
-    border-radius: 10px; /* Скругленные углы */
-    padding: 15px;
-    width: 200px; /* Ширина корзины */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
-    z-index: 100; /* Поверх остального содержимого */
-    overflow-y: auto; /* Скролл, если контента много */
-    max-height: 60vh; /* Максимальная высота корзины */
-}
-
-#cart h3 {
-    margin: 0;
-    margin-bottom: 10px;
-    font-size: 18px;
-    text-align: center;
-}
-
-#cart-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#cart-list li {
-    margin-bottom: 10px;
-    font-size: 14px;
+/* Контейнер корзины */
+#cart-container {
+    position: fixed;
+    left: -310px; /* Прячем корзину за левую границу */
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #000000;
+    color: white;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.5s ease; /* Анимация выезда */
+    z-index: 1000;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    border: 3px solid #ff7300;
 }
 
+/* Открытое состояние корзины */
+#cart-container.open {
+    left: 0; /* Выдвигаем корзину на экран */
+}
+
+/* Кнопка переключения корзины */
+#toggle-cart {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Располагаем кнопку слева */
+    background-color: #ff7300;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+}
 #total-cost {
     font-weight: bold;
     font-size: 16px;
@@ -256,11 +261,11 @@ button:hover {
 
 button#submit-order {
     display: block;
-    width: 100%;
-    background-color: #2d8d00; /* Зелёная кнопка */
+    width: 50%;
+    background-color: #ff7300cb; /* Зелёная кнопка */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 10px 15px;
     cursor: pointer;
     margin-top: 10px;
@@ -269,7 +274,7 @@ button#submit-order {
 }
 
 button#submit-order:hover {
-    background-color: #3dc000;
+    background-color: #ff5100;
 }
 .add-to-cart, .remove-from-cart {
     margin-top: 10px;
@@ -356,7 +361,7 @@ body {
 }
 
 #confirm-order {
-    background-color: #28a745;
+    background-color: #ff7300;
     color: white;
 }
 
